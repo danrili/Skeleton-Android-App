@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.heapanalytics.android'
 
 android {
     compileSdkVersion 26
@@ -16,11 +17,15 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+        debug {
+            ext.heap = ["enabled": true]
+        }
     }
 }
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile "com.heapanalytics.android:heap-android-client:0.5.1"
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })

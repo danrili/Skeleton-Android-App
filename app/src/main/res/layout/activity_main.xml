@@ -15,7 +15,6 @@
             android:layout_height="wrap_content"
             android:text="Click me"
             android:id="@+id/button_name"
-            android:onClick="onButtonClick"/>
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
